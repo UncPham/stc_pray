@@ -204,7 +204,7 @@ export default function Home() {
                         <img src="/trai_cay_dang_le_3.png" alt="Trái cây dâng lễ" className="h-20 sm:h-28 w-auto object-contain drop-shadow-xl" />
                         <img src="/trai_cay_dang_le_2.png" alt="Trái cây dâng lễ" className="h-20 sm:h-28 w-auto object-contain drop-shadow-xl" />
                       </div>
-                      <div className="absolute bottom-36 sm:bottom-48 left-1/2 h-6 sm:h-8 w-[50%] -translate-x-1/2 rounded-full bg-[#3a2416]" />
+                      <div className="absolute bottom-36 sm:bottom-48 left-1/2 h-6 sm:h-8 w-[20%] -translate-x-1/2 rounded-full bg-[#3a2416]" />
 
                       <div className="absolute -bottom-4 sm:-bottom-8 left-1/2 h-64 sm:h-80 w-60 sm:w-80 -translate-x-1/2">
                         <img
