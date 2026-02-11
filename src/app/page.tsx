@@ -77,7 +77,7 @@ export default function Home() {
 
         {/* Cây trang trí bên phải */}
         <div className="pointer-events-none fixed right-0 top-1/2 z-10 hidden -translate-y-1/2 items-center lg:flex">
-          <img src="/the1.png" alt="Hoa mai" className="w-40 xl:w-40 drop-shadow-lg" />
+          <img src="/the2.png" alt="Hoa mai" className="w-40 xl:w-40 drop-shadow-lg" />
           <img src="/mai.png" alt="Hoa mai" className="w-100 xl:w-100 drop-shadow-lg" />
         </div>
 
