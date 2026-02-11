@@ -179,3 +179,131 @@ body {
     opacity: 0;
   }
 }
+
+/* Prayer Chant Mode Animations */
+@keyframes prayer-overlay-fade {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(2px);
+  }
+}
+
+@keyframes prayer-text-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes prayer-text-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes prayer-particle-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) scale(0);
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20vh) scale(1);
+  }
+}
+
+@keyframes prayer-button-fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes chant-ember-intense {
+  0%, 100% {
+    box-shadow: 0 0 28px rgba(255, 200, 130, 1),
+                0 0 40px rgba(255, 170, 90, 0.7);
+    transform: scale(1.1);
+  }
+  50% {
+    box-shadow: 0 0 38px rgba(255, 220, 150, 1),
+                0 0 55px rgba(255, 190, 110, 0.9);
+    transform: scale(1.2);
+  }
+}
+
+/* Prayer Chant Mode Classes */
+.prayer-overlay-fade {
+  animation: prayer-overlay-fade 0.6s ease-out forwards;
+}
+
+.prayer-text-line {
+  opacity: 0;
+  animation: prayer-text-appear 0.8s ease-out forwards,
+             prayer-text-float 3s ease-in-out infinite;
+  text-shadow: 2px 2px 0px rgba(139, 74, 43, 0.9),
+               -2px -2px 0px rgba(139, 74, 43, 0.9),
+               2px -2px 0px rgba(139, 74, 43, 0.9),
+               -2px 2px 0px rgba(139, 74, 43, 0.9),
+               0 0 30px rgba(255, 215, 0, 0.8),
+               0 0 50px rgba(255, 200, 100, 0.6),
+               0 6px 12px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 1px rgba(101, 50, 25, 0.8);
+}
+
+.prayer-particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 1) 0%, rgba(255, 180, 80, 0.9) 50%, transparent 100%);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.9),
+              0 0 6px rgba(255, 140, 40, 0.6);
+  animation: prayer-particle-rise 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.prayer-button-fade {
+  animation: prayer-button-fade 0.8s ease-out 2s backwards;
+}
+
+/* Enhanced chanting effects */
+.chant-smoke-intense .smoke {
+  opacity: 0.85 !important;
+  filter: blur(3px);
+  animation-duration: 3.5s !important;
+}
+
+.chant-ember-glow {
+  animation: chant-ember-intense 1.5s ease-in-out infinite !important;
+}
+
+/* Radial gradient utility for Tailwind */
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+}
