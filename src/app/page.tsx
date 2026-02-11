@@ -199,8 +199,12 @@ export default function Home() {
                       {/* Smoke is now rendered per incense-stick */}
 
                       <div className="absolute bottom-8 sm:bottom-12 left-1/2 h-32 sm:h-40 w-[88%] -translate-x-1/2 rounded-[20px] sm:rounded-[28px] bg-gradient-to-b from-[#7a4b2e] via-[#5c3622] to-[#3b2216] shadow-[0_24px_50px_rgba(0,0,0,0.35)]" />
-                      <div className="absolute bottom-36 sm:bottom-48 left-1/2 h-10 sm:h-14 w-[70%] -translate-x-1/2 rounded-full bg-gradient-to-b from-[#c99a60] to-[#8a5d36] shadow-[0_16px_40px_rgba(0,0,0,0.25)]" />
-                      <div className="absolute bottom-36 sm:bottom-48 left-1/2 h-6 sm:h-8 w-[60%] -translate-x-1/2 rounded-full bg-[#3a2416] opacity-30" />
+                      <div className="absolute bottom-44 sm:bottom-56 left-1/2 h-22 sm:h-30 w-auto -translate-x-1/2 rounded-full bg-gradient-to-b from-[#c99a60] to-[#8a5d36] shadow-[0_16px_40px_rgba(0,0,0,0.25)] flex items-center justify-center gap-4 sm:gap-8 px-10 sm:px-35">
+                        <img src="/trai_cay_dang_le.png" alt="Trái cây dâng lễ" className="h-20 sm:h-28 w-auto object-contain drop-shadow-xl" />
+                        <img src="/trai_cay_dang_le_3.png" alt="Trái cây dâng lễ" className="h-20 sm:h-28 w-auto object-contain drop-shadow-xl" />
+                        <img src="/trai_cay_dang_le_2.png" alt="Trái cây dâng lễ" className="h-20 sm:h-28 w-auto object-contain drop-shadow-xl" />
+                      </div>
+                      <div className="absolute bottom-36 sm:bottom-48 left-1/2 h-6 sm:h-8 w-[50%] -translate-x-1/2 rounded-full bg-[#3a2416]" />
 
                       <div className="absolute -bottom-4 sm:-bottom-8 left-1/2 h-64 sm:h-80 w-60 sm:w-80 -translate-x-1/2">
                         <img
