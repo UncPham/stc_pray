@@ -210,13 +210,13 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.18] bg-[radial-gradient(circle_at_20%_20%,_#ffffff_0px,_transparent_120px)]" />
 
         {/* Cây trang trí bên trái */}
-        <div className="pointer-events-none fixed left-0 top-1/3 z-10 hidden -translate-y-1/2 items-center xl:flex">
+        <div className="pointer-events-none fixed left-0 top-3/7 z-10 hidden -translate-y-1/2 items-center xl:flex">
           <img src="/dao.png" alt="Hoa đào" className="w-80 xl:w-100 drop-shadow-lg opacity-80" />
           <img src="/the1.png" alt="Hoa mai" className="w-32 xl:w-40 drop-shadow-lg opacity-80" />
         </div>
 
-        {/* Merit Box - Left side */}
-        <div className="fixed left-4 bottom-4 z-20">
+        {/* Merit Box - Right side */}
+        <div className="fixed right-6 bottom-6 z-20">
           <button
             onClick={handleMeritBoxClick}
             className="group relative transition-transform hover:scale-105 active:scale-95"
@@ -224,11 +224,11 @@ export default function Home() {
             <img 
               src="/hop_cong_duc.png" 
               alt="Hòm công đức" 
-              className="w-16 h-16 sm:w-20 sm:h-20 drop-shadow-lg"
+              className="w-24 h-24 sm:w-32 sm:h-32 drop-shadow-xl"
             />
             {/* Tooltip */}
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-              <div className="bg-black/80 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+              <div className="bg-black/80 text-white text-sm px-3 py-2 rounded whitespace-nowrap">
                 Hòm công đức
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function Home() {
         </div>
 
         {/* Cây trang trí bên phải */}
-        <div className="pointer-events-none fixed right-0 top-1/3 z-10 hidden -translate-y-1/2 items-center xl:flex">
+        <div className="pointer-events-none fixed right-0 top-3/7 z-10 hidden -translate-y-1/2 items-center xl:flex">
           <img src="/the2.png" alt="Hoa mai" className="w-32 xl:w-40 drop-shadow-lg opacity-80" />
           <img src="/mai.png" alt="Hoa mai" className="w-80 xl:w-100 drop-shadow-lg opacity-80" />
         </div>
