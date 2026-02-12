@@ -28,6 +28,7 @@ export default function Home() {
   const [animating, setAnimating] = useState(false);
   const [isChanting, setIsChanting] = useState(false);
   const [prayerText, setPrayerText] = useState("");
+  const [showQR, setShowQR] = useState(false);
   const animatingRef = useRef(false);
   const chantTimerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -85,6 +86,14 @@ export default function Home() {
     setIsChanting(false);
   };
 
+  const handleMeritBoxClick = () => {
+    setShowQR(true);
+  };
+
+  const handleCloseQR = () => {
+    setShowQR(false);
+  };
+
   useEffect(() => {
     return () => {
       if (chantTimerRef.current) {
@@ -115,6 +124,42 @@ export default function Home() {
     <div
       className={`${bodyFont.className} min-h-screen bg-[#efe4d2] text-[#3d2a1a]`}
     >
+      {/* QR Modal */}
+      {showQR && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          {/* Dark background */}
+          <div 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={handleCloseQR}
+          />
+          
+          {/* QR Modal content */}
+          <div className="relative z-10 max-w-sm mx-4">
+            <div className="relative bg-white rounded-2xl p-6 shadow-2xl">
+              <button
+                onClick={handleCloseQR}
+                className="absolute -top-2 -right-2 h-8 w-8 rounded-full bg-red-500 text-white flex items-center justify-center text-lg font-bold hover:bg-red-600 transition-colors"
+              >
+                ×
+              </button>
+              <div className="text-center">
+                <h3 className={`${titleFont.className} text-lg font-semibold text-gray-800 mb-4`}>
+                  QR Code Công Đức
+                </h3>
+                <img 
+                  src="/QR.png" 
+                  alt="QR Code" 
+                  className="w-full max-w-64 mx-auto rounded-lg shadow-md"
+                />
+                <p className="mt-4 text-sm text-gray-600">
+                  Quét mã QR để đóng góp công đức
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Prayer Chant Overlay */}
       {isChanting && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -165,13 +210,33 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.18] bg-[radial-gradient(circle_at_20%_20%,_#ffffff_0px,_transparent_120px)]" />
 
         {/* Cây trang trí bên trái */}
-        <div className="pointer-events-none fixed left-0 top-1/2 z-10 hidden -translate-y-1/2 items-center xl:flex">
+        <div className="pointer-events-none fixed left-0 top-1/3 z-10 hidden -translate-y-1/2 items-center xl:flex">
           <img src="/dao.png" alt="Hoa đào" className="w-80 xl:w-100 drop-shadow-lg opacity-80" />
           <img src="/the1.png" alt="Hoa mai" className="w-32 xl:w-40 drop-shadow-lg opacity-80" />
         </div>
 
+        {/* Merit Box - Left side */}
+        <div className="fixed left-4 bottom-4 z-20">
+          <button
+            onClick={handleMeritBoxClick}
+            className="group relative transition-transform hover:scale-105 active:scale-95"
+          >
+            <img 
+              src="/hop_cong_duc.png" 
+              alt="Hòm công đức" 
+              className="w-16 h-16 sm:w-20 sm:h-20 drop-shadow-lg"
+            />
+            {/* Tooltip */}
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              <div className="bg-black/80 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                Hòm công đức
+              </div>
+            </div>
+          </button>
+        </div>
+
         {/* Cây trang trí bên phải */}
-        <div className="pointer-events-none fixed right-0 top-1/2 z-10 hidden -translate-y-1/2 items-center xl:flex">
+        <div className="pointer-events-none fixed right-0 top-1/3 z-10 hidden -translate-y-1/2 items-center xl:flex">
           <img src="/the2.png" alt="Hoa mai" className="w-32 xl:w-40 drop-shadow-lg opacity-80" />
           <img src="/mai.png" alt="Hoa mai" className="w-80 xl:w-100 drop-shadow-lg opacity-80" />
         </div>
@@ -229,7 +294,7 @@ export default function Home() {
                               <span className="smoke s2" style={{ position: 'absolute', top: '-100px', left: '50%', transform: 'translateX(-50%)' }} />
                               <span className="smoke s3" style={{ position: 'absolute', top: '-100px', left: '50%', transform: 'translateX(-50%)' }} />
                               <span className="incense-band" />
-                              <span className={`incense-ember ${isChanting ? 'chant-ember-glow' : ''}`} />
+                              <span className="incense-ember" />
                             </div>
                           ))}
                         </div>
