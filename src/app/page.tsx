@@ -188,7 +188,7 @@ export default function Home() {
                   Sống Tình Cảm adidaphat
                 </div>
                 <p className="max-w-xl text-xs text-[#6a4b32] sm:text-sm leading-relaxed">
-                  Hãy thắp hương để thể hiện lòng thành kính và cầu
+                  Hãy thắp hương để thể hiện lòng thành kính và cầu nguyện
                 </p>
               </div>
 
