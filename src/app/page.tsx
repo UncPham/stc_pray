@@ -144,7 +144,7 @@ export default function Home() {
               </button>
               <div className="text-center">
                 <h3 className={`${titleFont.className} text-lg font-semibold text-gray-800 mb-4`}>
-                  QR Code Công Đức
+                  QR Code
                 </h3>
                 <img 
                   src="/QR.png" 
@@ -152,7 +152,7 @@ export default function Home() {
                   className="w-full max-w-64 mx-auto rounded-lg shadow-md"
                 />
                 <p className="mt-4 text-sm text-gray-600">
-                  Quét mã QR để đóng góp công đức
+                  Quét mã QR để đóng góp
                 </p>
               </div>
             </div>
